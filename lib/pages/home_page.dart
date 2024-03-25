@@ -1,4 +1,5 @@
 
+import 'package:dribble_ui/utility/emotion_face.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(width: 5,),
                       Text(
                         '24 march, 2024',
                         style: TextStyle(
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 25,),
               // search bar
               Container(
                 decoration: BoxDecoration(
@@ -88,7 +89,41 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+              ),
+
+              SizedBox(height: 25,),
+
+              //how do you feel
+               Row(
+                
+                mainAxisAlignment: MainAxisAlignment.start
+                ,
+                 children: [
+                   Text(
+                        'How do you feel?',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Icon(
+                            Icons.more_horiz,
+                            color: Colors.white,
+                            ),
+                           
+                           
+                 ],
+               ),
+
+               SizedBox(height: 25,),
+              //4 different faces
+             Row(
+              children: [
+                EmotionFace(),
+              ],
               )
+
             ],
           ),
         ),

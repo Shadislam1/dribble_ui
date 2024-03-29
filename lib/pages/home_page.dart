@@ -14,116 +14,214 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[800],
+      bottomNavigationBar: BottomNavigationBar(items: [
+      BottomNavigationBarItem(icon:Icon(Icons.home),label: ''),
+      BottomNavigationBarItem(icon:Icon(Icons.home),label: ''),
+      BottomNavigationBarItem(icon:Icon(Icons.home),label: ''),
+      ]),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.symmetric(horizontal:8.0),
           child: Column(
           
             children: [
               //greeting row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: Column(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'shad',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(width: 5,),
-                      Text(
-                        '24 march, 2024',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue[100],
-                        ),
-                        ),
-                    ],
-                  ),
-                  //notification
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.blue[600],
-                      borderRadius: BorderRadius.circular(12),
-                     
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Icon(
-                        Icons.notifications,
-                        color: Colors.white,
-                                      
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 25,),
-              // search bar
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.blue[600],
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    children: [
-                     
-                      Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        ),
+                   Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Text(
-                          'Search',
+                          'shad',
                           style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
+                        ),
+                        SizedBox(width: 5,),
+                        Text(
+                          '24 march, 2024',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue[100],
                           ),
-                    ],
-                  ),
+                          ),
+                      ],
+                    ),
+                    //notification
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue[600],
+                        borderRadius: BorderRadius.circular(12),
+                       
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                                        
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-
-              SizedBox(height: 25,),
-
-              //how do you feel
-               Row(
-                
-                mainAxisAlignment: MainAxisAlignment.start
-                ,
-                 children: [
-                   Text(
-                        'How do you feel?',
+                SizedBox(height: 25,),
+                // search bar
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue[600],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Row(
+                      children: [
+                       
+                        Icon(
+                          Icons.search,
+                          color: Colors.white,
+                          ),
+                          Text(
+                            'Search',
                             style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
-                          ),
-                          Icon(
-                            Icons.more_horiz,
-                            color: Colors.white,
                             ),
-                           
-                           
-                 ],
+                      ],
+                    ),
+                  ),
+                ),
+                     
+                SizedBox(height: 25,),
+                     
+                //how do you feel
+                 Row(
+                  
+                  mainAxisAlignment: MainAxisAlignment.start
+                  ,
+                   children: [
+                     Text(
+                          'How do you feel?',
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Icon(
+                              Icons.more_horiz,
+                              color: Colors.white,
+                              ),
+                             
+                             
+                   ],
+                 ),
+                     
+                 SizedBox(height: 25,),
+                //4 different faces
+               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      EmotionFace(
+                        emotionFace: '😘',
+                        
+                        ),
+                        SizedBox(height:8),
+                        Text(
+                      'Love',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      ),
+                     
+                      
+                    ],
+                  ),
+                     
+                  SizedBox(width: 10,),
+                  //fine
+                     
+                   Column(
+                    children: [
+                      EmotionFace(
+                        emotionFace: '😉',
+                        
+                        ),
+                        SizedBox(height:8),
+                        Text(
+                      'Happy',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      ),
+                     
+                      
+                    ],
+                  ),
+                    
+                   
+                        
+                   SizedBox(width: 10,),
+                     
+                  // bad
+                   Column(
+                    children: [
+                      EmotionFace(
+                        emotionFace: '😥',
+                        
+                        ),
+                        SizedBox(height:8),
+                        Text(
+                      'mood off',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      ),
+                     
+                      
+                    ],
+                  ),
+                  SizedBox(width: 10,),
+                  //excelent
+                     
+                   Column(
+                    children: [
+                      EmotionFace(
+                        emotionFace: '👻',
+                        
+                        ),
+                        SizedBox(height:8),
+                        Text(
+                      'Gost',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      ),
+                     
+                      
+                    ],
+                  ),
+                ],
+                ),
+                ],
                ),
-
-               SizedBox(height: 25,),
-              //4 different faces
-             Row(
-              children: [
-                EmotionFace(),
-              ],
-              )
-
+             ),
+             SizedBox(height: 25,),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+            ),
+          )
             ],
           ),
         ),

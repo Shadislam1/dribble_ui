@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 
 class EmotionFace extends StatelessWidget {
-  const EmotionFace({super.key});
+  final String  emotionFace;
+  const EmotionFace({
+    super.key, required this.emotionFace,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,16 @@ class EmotionFace extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child:Text('😘')
+                      child:Center(
+                        child: Text(
+                          emotionFace,
+                          style: TextStyle(
+                            fontSize: 28,
+                          ),
+                          
+                          ),
+                          
+                          ),
                     ),
                   );
   }

@@ -1,5 +1,6 @@
 
 import 'package:dribble_ui/utility/emotion_face.dart';
+import 'package:dribble_ui/utility/excercise_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,8 +17,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.blue[800],
       bottomNavigationBar: BottomNavigationBar(items: [
       BottomNavigationBarItem(icon:Icon(Icons.home),label: ''),
-      BottomNavigationBarItem(icon:Icon(Icons.home),label: ''),
-      BottomNavigationBarItem(icon:Icon(Icons.home),label: ''),
+      BottomNavigationBarItem(icon:Icon(Icons.message),label: ''),
+      BottomNavigationBarItem(icon:Icon(Icons.person),label: ''),
       ]),
       body: SafeArea(
         child: Padding(
@@ -219,7 +220,59 @@ class _HomePageState extends State<HomePage> {
              SizedBox(height: 25,),
           Expanded(
             child: Container(
-              color: Colors.white,
+              padding: EdgeInsets.all(25),
+             
+              color: Colors.grey[200],
+              child: Center(
+                child: Column(
+                  children: [
+                    //excercise heading
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Exercises",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                          ),
+                        Icon(Icons.more_horiz),
+                        
+                      ],
+                    ),
+
+                    SizedBox(height: 20,),
+                    //list of exercise
+                   Expanded(
+                     child: ListView(
+                      children: [
+                        ExerciseTile(
+                          icon: Icons.favorite,
+                          excerciseName: 'Speaking Skill',
+                          numberOfExercise: 16,
+                          color: Colors.orange,
+                        ),
+                         ExerciseTile(
+                          icon: Icons.person,
+                          excerciseName: 'Reading Skill',
+                          numberOfExercise: 8,
+                          color: Colors.green,
+                         ),
+                          ExerciseTile(
+                            icon: Icons.star,
+                          excerciseName: 'Writing Skill',
+                          numberOfExercise: 20,
+                          color: Colors.purple,
+                          ),
+
+                      ],
+                     ),
+                   )
+                  
+                  ],
+                ),
+              ),
             ),
           )
             ],
